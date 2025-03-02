@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 interface ContentHighlightProps {
   title: string;
@@ -17,7 +18,7 @@ const ContentHighlight: React.FC<ContentHighlightProps> = ({
     <div className="flex flex-col md:flex-row items-center justify-between p-6">
       {imagePosition === 'left' && (
         <div className="md:w-1/2 p-4">
-          <img
+          <Image
             src={imageUrl}
             alt="Component Image"
             className="w-full h-auto"
@@ -30,7 +31,7 @@ const ContentHighlight: React.FC<ContentHighlightProps> = ({
       </div>
       {imagePosition === 'right' && (
         <div className="md:w-1/2 p-4">
-          <img
+          <Image
             src={imageUrl}
             alt="Component Image"
             className="w-full h-auto"

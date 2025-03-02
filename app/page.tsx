@@ -12,13 +12,13 @@ export default function Home() {
         <ContentHighlight
           title="For Consumers"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque vulputate, lorem eu tempor tincidunt, augue ante sagittis quam."
-          imageUrl="images/Customer-Image.png" // Replace with the actual image path
+          imageUrl="/images/Customer-Image.png" // Replace with the actual image path
           imagePosition="left" // Or "right"
         />
         <ContentHighlight
           title="For Cafés"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque vulputate, lorem eu tempor tincidunt, augue ante sagittis quam."
-          imageUrl="images/Cafe-Image.png" // Replace with the actual image path
+          imageUrl="/images/Cafe-Image.png" // Replace with the actual image path
           imagePosition="right" // Or "right"
         />
         <AboutSection />

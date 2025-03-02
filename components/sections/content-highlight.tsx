@@ -15,12 +15,14 @@ const ContentHighlight: React.FC<ContentHighlightProps> = ({
   imagePosition = 'left',
 }) => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between p-6">
+    <div className="flex flex-col md:flex-row items-center justify-between pt-6 pb-6 max-w-6xl mx-auto">
       {imagePosition === 'left' && (
         <div className="md:w-1/2 p-4">
           <Image
             src={imageUrl}
             alt="Component Image"
+            width={500}
+            height={500}
             className="w-full h-auto"
           />
         </div>
@@ -34,6 +36,8 @@ const ContentHighlight: React.FC<ContentHighlightProps> = ({
           <Image
             src={imageUrl}
             alt="Component Image"
+            width={500}
+            height={500}
             className="w-full h-auto"
           />
         </div>

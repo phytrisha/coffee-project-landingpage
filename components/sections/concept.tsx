@@ -26,7 +26,7 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
 const ConceptSection = () => {
   return (
     <div className="py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-serif text-[#58412f] text-center mb-8">
           The Concept
         </h2>

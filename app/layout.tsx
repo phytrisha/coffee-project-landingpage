@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Crimson_Pro, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
+import { CookieToast } from '@/components/cookie-toast';
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +42,7 @@ export default function RootLayout({
       >
         {children}
         <Analytics />
+        <CookieToast />
       </body>
     </html>
   );

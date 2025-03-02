@@ -1,12 +1,28 @@
+import Hero from '@/components/sections/hero'
+import ConceptSection from '@/components/sections/concept';
+import ContentHighlight from '@/components/sections/content-highlight';
+import AboutSection from '@/components/sections/about';
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-6xl">The Coffee Project</h1>
+    <div className="grid grid-rows-[20px_1fr_20px]">
+      <main>
+        <Hero />
+        <ConceptSection />
+        <ContentHighlight
+          title="For Consumers"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque vulputate, lorem eu tempor tincidunt, augue ante sagittis quam."
+          imageUrl="images/Customer-Image.png" // Replace with the actual image path
+          imagePosition="left" // Or "right"
+        />
+        <ContentHighlight
+          title="For Cafés"
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque vulputate, lorem eu tempor tincidunt, augue ante sagittis quam."
+          imageUrl="images/Cafe-Image.png" // Replace with the actual image path
+          imagePosition="right" // Or "right"
+        />
+        <AboutSection />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <p>Fouad Tabet-Aoul / Mark Frederik Meyer 2025</p>
-      </footer>
     </div>
   );
 }

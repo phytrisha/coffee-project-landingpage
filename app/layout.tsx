@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${crimsonPro.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${crimsonPro.variable} ${inter.variable} max-w-7xl mx-auto px-4 md:px-16 antialiased`}
       >
         {children}
         <Analytics />

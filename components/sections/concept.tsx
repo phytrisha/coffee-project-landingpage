@@ -26,15 +26,13 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
 
 const ConceptSection = () => {
   return (
-    <div className="py-16 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto">
+    <div className="py-16">
+      <div>
         <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#433A21] text-center mb-8">
-          The Concept
+          Das Konzept
         </h2>
-        <p className="text-lg text-[#433A21] text-center mb-12">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo
-          quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque
-          vulputate, lorem eu tempor tincidunt, augue ante sagittis quam.
+        <p className="text-base text-[#433A21] text-center mb-12 max-w-4xl mx-auto">
+          Die Idee ist einfach: Lade dir unsere App herunter und schließe ein Abo ab, das zu dir passt. Durch das Abo erhälst du jeden Monat Coffee Credits, die du gegen Heißgetränke deiner Wahl in teilnehmenden Cafés einlösen kannst.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -48,8 +46,8 @@ const ConceptSection = () => {
                 alt="Two Hearts"
               />
             }
-            title="One subscription for all cafés in your area"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus."
+            title="Ein Abo für alle Cafés in deiner Umgebung"
+            description="Die Credits, die du in deinem Abo jeden Monat erhälst, kannst du in jedem teilnehmenden Café einlösen."
           />}
 
           {/* Feature 2 */}
@@ -62,8 +60,8 @@ const ConceptSection = () => {
                 alt="Two Hearts"
               />
             }
-            title="Saves you money with every coffee"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus."
+            title="Spare bares Geld mit jedem Kaffee"
+            description="Durch das Abo-Modell zahlst du für jeden Kaffee beachtlich weniger, als wenn du ihn einzeln kaufen würdest."
           />
 
           {/* Feature 3 */}
@@ -76,8 +74,8 @@ const ConceptSection = () => {
                 alt="Two Hearts"
               />
             }
-            title="Supports local cafés and coffee culture"
-            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus."
+            title="Trägt zur lokalen Café- und Kaffeekultur bei"
+            description="Durch deinen Beitrag erlangen lokale Cafés mehr Stabilität und können weiter fantastische Produkte anbieten."
           />
         </div>
       </div>

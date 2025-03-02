@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 const AboutSection = () => {
   return (
@@ -12,6 +13,9 @@ const AboutSection = () => {
           quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque
           vulputate, lorem eu tempor tincidunt, augue ante sagittis quam.
         </p>
+        <div className='flex flex-center'>
+          <Link className='mx-auto' href="/imprint">Impressum</Link>
+        </div>
       </div>
     </div>
   );

@@ -28,8 +28,8 @@ const ContentHighlight: React.FC<ContentHighlightProps> = ({
         </div>
       )}
       <div className="md:w-1/2 p-4">
-        <h2 className="text-2xl font-bold mb-4">{title}</h2>
-        <p className="text-base leading-relaxed">{description}</p>
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#433A21] mb-8">{title}</h2>
+        <p className="text-base text-[#433A21] leading-relaxed">{description}</p>
       </div>
       {imagePosition === 'right' && (
         <div className="md:w-1/2 p-4">

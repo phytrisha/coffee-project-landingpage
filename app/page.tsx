@@ -10,7 +10,7 @@ export default function Home() {
         <Hero />
         <ConceptSection />
         <ContentHighlight
-          title="For Consumers"
+          title="For Coffee Lovers"
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque vulputate, lorem eu tempor tincidunt, augue ante sagittis quam."
           imageUrl="/images/Customer-Image.png" // Replace with the actual image path
           imagePosition="left" // Or "right"

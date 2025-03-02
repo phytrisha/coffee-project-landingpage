@@ -17,7 +17,7 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
       <h3 className="text-xl md:text-3xl font-serif font-semibold text-[#D03900] mb-2">
         {title}
       </h3>
-      <p className="text-base text-[#58412f]">
+      <p className="text-base text-[#433A21]">
         {description}
       </p>
     </div>
@@ -28,10 +28,10 @@ const ConceptSection = () => {
   return (
     <div className="py-16 px-4 md:px-8 lg:px-16">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#58412f] text-center mb-8">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#433A21] text-center mb-8">
           The Concept
         </h2>
-        <p className="text-lg text-[#58412f] text-center mb-12">
+        <p className="text-lg text-[#433A21] text-center mb-12">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eleifend justo
           quis magna facilisis, et eleifend elit rhoncus. Vestibulum vel velit lorem. Quisque
           vulputate, lorem eu tempor tincidunt, augue ante sagittis quam.

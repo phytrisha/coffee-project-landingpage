@@ -19,6 +19,7 @@ export default function VisitorFormDialog() {
   const [message, setMessage] = useState<string>('');
   const [emailError, setEmailError] = useState<string>('');
   const [open, setOpen] = useState<boolean>(false);
+  const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -28,9 +29,8 @@ export default function VisitorFormDialog() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate email only on submit
     if (!email) {
-      setEmailError("Bitte gib deine E-Mail Adresse ein.");
+      setEmailError('Bitte gib deine E-Mail Adresse ein.');
       return;
     }
 
@@ -38,7 +38,7 @@ export default function VisitorFormDialog() {
       setEmailError('Ungültige E-Mail-Adresse');
       return;
     } else {
-      setEmailError(''); // Clear error if email is valid
+      setEmailError('');
     }
 
     try {
@@ -54,8 +54,9 @@ export default function VisitorFormDialog() {
       setMessage(data.message || data.error);
 
       if (response.ok) {
-          setEmail("");
-          setName("");
+        setEmail('');
+        setName('');
+        setSubmissionSuccess(true);
       }
 
     } catch (error) {
@@ -64,8 +65,16 @@ export default function VisitorFormDialog() {
     }
   };
 
+    const handleOpenChange = (newOpen: boolean) => {
+        setOpen(newOpen);
+        if (newOpen) {
+            setSubmissionSuccess(false); // Reset on open
+            setMessage(""); // reset message
+        }
+    };
+
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
         <Button size="lg" className="cursor-pointer">
           Jetzt anmelden
@@ -103,7 +112,7 @@ export default function VisitorFormDialog() {
               id="email"
               placeholder="Deine E-Mail Adresse"
               value={email}
-              onChange={(e) => setEmail(e.target.value)} // Only set the email state on change
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             {emailError && <p className="text-sm text-red-500">{emailError}</p>}
@@ -111,9 +120,12 @@ export default function VisitorFormDialog() {
           {message && <p className="text-sm text-center">{message}</p>}
         </form>
         <DialogFooter>
-          <Button className="cursor-pointer" type="submit" onClick={handleSubmit}>
-            Anmelden
-          </Button>
+          {!submissionSuccess && (
+            <Button className="cursor-pointer" type="submit" onClick={handleSubmit}>
+              Anmelden
+            </Button>
+          )}
+          {submissionSuccess}
         </DialogFooter>
       </DialogContent>
     </Dialog>

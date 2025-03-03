@@ -47,7 +47,7 @@ const ConceptSection = () => {
               />
             }
             title="Ein Abo für alle Cafés in deiner Umgebung"
-            description="Die Credits, die du in deinem Abo jeden Monat erhälst, kannst du in jedem teilnehmenden Café einlösen."
+            description="Die Credits, die du in deinem Abo jeden Monat erhältst, kannst du in jedem teilnehmenden Café einlösen."
           />}
 
           {/* Feature 2 */}

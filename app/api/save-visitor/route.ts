@@ -20,7 +20,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Die Verbindung kann zur Zeit nicht hergestellt werden. Bitte versuche es später nochmal.' }, { status: 500 });
     }
 
-    return NextResponse.json({ message: 'Deine Daten wurden erfolgreich gespeichert – Vielen Dank und bis bald!' }, { status: 200 });
+    return NextResponse.json({ message: 'Vielen Dank – Wir melden uns bei dir, sobald es etwas Neues zu The Coffee Project gibt ☕️❤️' }, { status: 200 });
   } catch (error) {
     console.error('Unexpected error:', error);
     if (error instanceof Error) {

@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/dialog';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { Loader2 } from "lucide-react"; // Import a loading icon
 
 export default function VisitorFormDialog() {
   const [name, setName] = useState<string>('');
@@ -20,6 +21,7 @@ export default function VisitorFormDialog() {
   const [emailError, setEmailError] = useState<string>('');
   const [open, setOpen] = useState<boolean>(false);
   const [submissionSuccess, setSubmissionSuccess] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false); // Added loading state
 
   const validateEmail = (email: string) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -41,6 +43,7 @@ export default function VisitorFormDialog() {
       setEmailError('');
     }
 
+    setIsLoading(true); // Set loading to true
     try {
       const response = await fetch('/api/save-visitor', {
         method: 'POST',
@@ -62,16 +65,18 @@ export default function VisitorFormDialog() {
     } catch (error) {
       console.error('Error submitting form:', error);
       setMessage('Ein Fehler ist aufgetreten.');
+    } finally {
+      setIsLoading(false); // Set loading to false
     }
   };
 
-    const handleOpenChange = (newOpen: boolean) => {
-        setOpen(newOpen);
-        if (newOpen) {
-            setSubmissionSuccess(false); // Reset on open
-            setMessage(""); // reset message
-        }
-    };
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+    if (newOpen) {
+      setSubmissionSuccess(false);
+      setMessage("");
+    }
+  };
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -121,8 +126,15 @@ export default function VisitorFormDialog() {
         </form>
         <DialogFooter>
           {!submissionSuccess && (
-            <Button className="cursor-pointer" type="submit" onClick={handleSubmit}>
-              Anmelden
+            <Button className="cursor-pointer" type="submit" onClick={handleSubmit} disabled={isLoading}>
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Anmeldung läuft...
+                </>
+              ) : (
+                'Anmelden'
+              )}
             </Button>
           )}
           {submissionSuccess}

@@ -18,7 +18,7 @@ const SubscriptionCard: React.FC<SubscriptionCardProps> = ({ title, price, featu
   return (
     <Card className='w-full'>
         <CardHeader>
-            <CardTitle className="text-xl md:text-3xl font-serif font-semibold text-[#D03900]">{title}</CardTitle>
+            <CardTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">{title}</CardTitle>
             <CardDescription>{price}</CardDescription>
         </CardHeader>
         <CardContent>

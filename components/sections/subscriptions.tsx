@@ -3,9 +3,9 @@ import SubscriptionCard from '../subscription-card';
 
 const SubscriptionSection = () => {
 
-    const espressoFeatures = ['Bei allen Cafés einlösbar', 'Bis zu 3 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden']
-    const cortadoFeatures = ['Bei allen Cafés einlösbar', 'Bis zu 5 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden', '5% Rabatt auf Snacks']
-    const cappuccinoFeatures = ['Bei allen Cafés einlösbar', 'Bis zu 10 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden', '10% Rabatt auf Snacks', 'Aufladen von Credits im laufenden Monat']
+    const espressoFeatures = ['5 Credits pro Monat', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 3 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden']
+    const cortadoFeatures = ['15 Credits pro Monat', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 5 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden', '5% Rabatt auf Snacks']
+    const cappuccinoFeatures = ['30 Credits pro Monat', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 10 Getränke auf den nächsten Monat übertragbar', 'Teile Credits mit Freunden', '10% Rabatt auf Snacks', 'Aufladen von Credits im laufenden Monat']
 
   return (
     <div className='py-16'>

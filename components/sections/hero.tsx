@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { Button } from '../ui/button';
+import VisitorFormDialog from '../contact';
 
 const Hero = () => {
   return (
@@ -10,9 +10,9 @@ const Hero = () => {
           The Coffee Project
         </h1>
         <p className="text-lg md:text-xl text-[#433A21] mb-6">
-          Stärke die lokale Kaffeekultur in deiner Stadt. Eine Tasse nach der Nächsten.
+          Stärke die lokale Kaffeekultur in deiner Stadt. Eine Tasse nach der Nächsten. Verfügbar ab Sommer 2025.
         </p>
-        <Button size="lg" className='cursor-pointer'>Jetzt anmelden</Button>
+        <VisitorFormDialog />
       </div>
       <div className="md:w-1/2">
         <Image

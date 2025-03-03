@@ -87,43 +87,53 @@ export default function VisitorFormDialog() {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">
-            Jetzt anmelden
-          </DialogTitle>
-          <DialogDescription>
-            Melde dich jetzt mit deinem Namen und deiner E-Mail Adresse an um als erstes von Neuigkeiten zu The Coffee Project zu erfahren!
-          </DialogDescription>
+          {submissionSuccess ? (
+            <DialogTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">
+              Anmeldung erfolgreich
+            </DialogTitle>
+          ) : (
+            <DialogTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">
+              Jetzt anmelden
+            </DialogTitle>
+          )}
+          {!submissionSuccess && (
+            <DialogDescription>
+              Melde dich jetzt mit deinem Namen und deiner E-Mail Adresse an um als erstes von Neuigkeiten zu The Coffee Project zu erfahren!
+            </DialogDescription>
+          )}
         </DialogHeader>
-        <form onSubmit={handleSubmit} className="grid gap-4 py-4">
-          <div className="grid gap-2">
-            <label htmlFor="name" className="text-base">
-              Name
-            </label>
-            <Input
-              type="text"
-              id="name"
-              placeholder="Dein Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
-          </div>
-          <div className="grid gap-2">
-            <label htmlFor="email" className="text-base">
-              E-Mail
-            </label>
-            <Input
-              type="email"
-              id="email"
-              placeholder="Deine E-Mail Adresse"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            {emailError && <p className="text-sm text-red-500">{emailError}</p>}
-          </div>
-          {message && <p className="text-sm text-center">{message}</p>}
-        </form>
+        {!submissionSuccess && (
+          <form onSubmit={handleSubmit} className="grid gap-4 py-4">
+            
+            <div className="grid gap-2">
+              <label htmlFor="name" className="text-base">
+                Name
+              </label>
+              <Input
+                type="text"
+                id="name"
+                placeholder="Dein Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="grid gap-2">
+              <label htmlFor="email" className="text-base">
+                E-Mail
+              </label>
+              <Input
+                type="email"
+                id="email"
+                placeholder="Deine E-Mail Adresse"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              {emailError && <p className="text-sm text-red-500">{emailError}</p>}
+            </div>
+          </form>
+        )}
         <DialogFooter>
           {!submissionSuccess && (
             <Button className="cursor-pointer" type="submit" onClick={handleSubmit} disabled={isLoading}>
@@ -138,6 +148,7 @@ export default function VisitorFormDialog() {
             </Button>
           )}
           {submissionSuccess}
+          {message && <p className="text-sm text-center">{message}</p>} {/* Always show the message */}
         </DialogFooter>
       </DialogContent>
     </Dialog>

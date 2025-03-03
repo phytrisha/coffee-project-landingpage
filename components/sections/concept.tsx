@@ -32,7 +32,7 @@ const ConceptSection = () => {
           Das Konzept
         </h2>
         <p className="text-base text-[#433A21] text-center mb-12 max-w-4xl mx-auto">
-          Die Idee ist einfach: Lade dir unsere App herunter und schließe ein Abo ab, das zu dir passt. Durch das Abo erhälst du jeden Monat Coffee Credits, die du gegen Heißgetränke deiner Wahl in teilnehmenden Cafés einlösen kannst.
+          Die Idee ist einfach: Lade dir unsere App herunter und schließe ein Abo ab, das zu dir passt. Durch das Abo erhältst du jeden Monat Coffee Credits, die du gegen Heißgetränke deiner Wahl in teilnehmenden Cafés einlösen kannst.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

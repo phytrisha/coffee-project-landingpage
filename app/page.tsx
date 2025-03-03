@@ -2,6 +2,7 @@ import Hero from '@/components/sections/hero'
 import ConceptSection from '@/components/sections/concept';
 import ContentHighlight from '@/components/sections/content-highlight';
 import AboutSection from '@/components/sections/about';
+import SubscriptionSection from '@/components/sections/subscriptions';
 
 import { Separator } from "@/components/ui/separator"
 
@@ -17,6 +18,7 @@ export default function Home() {
           imageUrl="/images/Customer-Image.png" // Replace with the actual image path
           imagePosition="left" // Or "right"
         />
+        <SubscriptionSection />
         <Separator />
         <ContentHighlight
           title="Für Cafés"

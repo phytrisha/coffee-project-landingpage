@@ -9,9 +9,12 @@ const SubscriptionSection = () => {
 
   return (
     <div className='py-16'>
-        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#433A21] text-center mb-8">
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#433A21] text-center mb-4">
           Unsere Abo-Modelle
         </h2>
+        <p className="text-base text-[#433A21] text-center mb-4 max-w-4xl mx-auto">
+          Drei Abo-Modelle stehen Dir zur Auswahl. Bei jedem Abo-Modell erhältst du eine unterschiedliche Anzahl an Credits pro Monat. Jedes dieser Credits kannst du gegen ein Kaffeegetränk deiner Wahl in teilnehmenden Cafés einlösen.
+        </p>
         <div className="py-8 justify-stretch gap-y-8 md:gap-x-8 flex flex-col md:flex-row">
             <SubscriptionCard
                 title="Espresso"

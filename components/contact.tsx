@@ -17,10 +17,29 @@ export default function VisitorFormDialog() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [emailError, setEmailError] = useState<string>('');
   const [open, setOpen] = useState<boolean>(false);
+
+  const validateEmail = (email: string) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate email only on submit
+    if (!email) {
+      setEmailError("Bitte gib deine E-Mail Adresse ein.");
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      setEmailError('Ungültige E-Mail-Adresse');
+      return;
+    } else {
+      setEmailError(''); // Clear error if email is valid
+    }
 
     try {
       const response = await fetch('/api/save-visitor', {
@@ -33,20 +52,30 @@ export default function VisitorFormDialog() {
 
       const data = await response.json();
       setMessage(data.message || data.error);
+
+      if (response.ok) {
+          setEmail("");
+          setName("");
+      }
+
     } catch (error) {
       console.error('Error submitting form:', error);
-      setMessage('An error occurred.');
+      setMessage('Ein Fehler ist aufgetreten.');
     }
   };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button size="lg" className='cursor-pointer'>Jetzt anmelden</Button>
+        <Button size="lg" className="cursor-pointer">
+          Jetzt anmelden
+        </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">Jetzt anmelden</DialogTitle>
+          <DialogTitle className="text-2xl md:text-3xl font-serif font-semibold text-[#D03900]">
+            Jetzt anmelden
+          </DialogTitle>
           <DialogDescription>
             Melde dich jetzt mit deinem Namen und deiner E-Mail Adresse an um als erstes von Neuigkeiten zu The Coffee Project zu erfahren!
           </DialogDescription>
@@ -59,6 +88,7 @@ export default function VisitorFormDialog() {
             <Input
               type="text"
               id="name"
+              placeholder="Dein Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
@@ -71,15 +101,17 @@ export default function VisitorFormDialog() {
             <Input
               type="email"
               id="email"
+              placeholder="Deine E-Mail Adresse"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)} // Only set the email state on change
               required
             />
+            {emailError && <p className="text-sm text-red-500">{emailError}</p>}
           </div>
           {message && <p className="text-sm text-center">{message}</p>}
         </form>
         <DialogFooter>
-          <Button className='cursor-pointer' type="submit" onClick={handleSubmit}>
+          <Button className="cursor-pointer" type="submit" onClick={handleSubmit}>
             Anmelden
           </Button>
         </DialogFooter>

@@ -33,9 +33,6 @@ export default function VisitorFormDialog() {
 
       const data = await response.json();
       setMessage(data.message || data.error);
-      if (response.ok) {
-        setOpen(false);
-      }
     } catch (error) {
       console.error('Error submitting form:', error);
       setMessage('An error occurred.');

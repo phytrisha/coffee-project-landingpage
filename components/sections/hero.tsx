@@ -10,7 +10,7 @@ const Hero = () => {
           The Coffee Project
         </h1>
         <p className="text-lg md:text-xl text-[#433A21] mb-6">
-          Stärke die lokale Kaffeekultur in deiner Stadt. Eine Tasse nach der Nächsten. Verfügbar ab Sommer 2025.
+          Stärke die lokale Kaffeekultur in deiner Stadt. Eine Tasse nach der Nächsten. Verfügbar ab Herbst 2025.
         </p>
         <VisitorFormDialog />
       </div>

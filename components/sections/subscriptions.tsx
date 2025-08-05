@@ -5,7 +5,7 @@ const SubscriptionSection = () => {
 
     const espressoFeatures = ['5 Kaffees pro Monat', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 3 Kaffees auf den nächsten Monat übertragbar']
     const cortadoFeatures = ['10 Kaffees pro Monat', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 5 Kaffees auf den nächsten Monat übertragbar']
-    const cappuccinoFeatures = ['1 Kaffees pro Tag', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 10 Kaffees auf den nächsten Monat übertragbar']
+    const cappuccinoFeatures = ['1 Kaffee pro Tag', 'Bei allen teilnehmenden Cafés einlösbar', 'Bis zu 10 Kaffees auf den nächsten Monat übertragbar']
 
   return (
     <div className='py-16'>

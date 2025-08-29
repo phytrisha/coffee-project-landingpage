@@ -18,7 +18,7 @@ export default function Home() {
           imageUrl="/images/Customer-Image.png" // Replace with the actual image path
           imagePosition="left" // Or "right"
         />
-        <SubscriptionSection />
+        {/* <SubscriptionSection /> */}
         <Separator />
         <ContentHighlight
           title="Für Cafés"
